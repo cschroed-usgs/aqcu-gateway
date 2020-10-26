@@ -17,7 +17,9 @@
 
   services:
     aqcu-gateway:
-      build: .
+      build:
+        context: .
+        network: host
       image: aqcu-gateway
       ports:
         - "7499:7499"
@@ -29,7 +31,9 @@
         - ./docker/secrets.env
     
     aqcu-gateway-local-dev:
-      build: .
+      build:
+        context: .
+        network: host
       image: aqcu-gateway
       network_mode: "host"
       ports:
@@ -42,7 +46,9 @@
         - ./docker/secrets.env
   
     aqcu-gateway-debug:
-      build: .
+      build:
+        context: .
+        network: host
       image: aqcu-gateway
       network_mode: "host"
       ports:
