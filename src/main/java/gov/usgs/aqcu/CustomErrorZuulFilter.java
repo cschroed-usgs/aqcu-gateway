@@ -16,7 +16,7 @@ public class CustomErrorZuulFilter extends ZuulFilter {
 	@Override
 	public boolean shouldFilter() {
 		RequestContext ctx = RequestContext.getCurrentContext();
-		return ctx.getResponseStatusCode() == 401 || ctx.getResponseStatusCode() == 403;
+		return ctx.getResponseStatusCode() == 401;
 	}
 
 	@Override
