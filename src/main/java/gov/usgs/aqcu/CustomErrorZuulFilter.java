@@ -25,7 +25,6 @@ public class CustomErrorZuulFilter extends ZuulFilter {
 		RequestContext ctx = RequestContext.getCurrentContext();
 		ctx.setResponseBody("<html><head/><body>You have been logged out due to inactivity. Please visit <a href=\"" + loginUrl + "\">" + loginUrl + "</a> to log in again</body></html>");
 		ctx.getResponse().setContentType("text/html");
-		ctx.setResponseStatusCode(200);
 		return null;
 	}
 
